@@ -11,6 +11,14 @@ router.get('/dashboard',async(req,res)=>{
     }catch(e){
         return res.render('404');
     }
+});
+
+router.get('/morning_prayer',async(req,res)=>{
+    try {
+        return res.render('morning');
+    }catch(e){
+        return res.render('404'); 
+    }
 })
 
 module.exports = router;
