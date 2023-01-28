@@ -49,7 +49,8 @@ app.get('/', (req, res) => {
   res.send('Hello World');
 });
 
-app.use(authRoutes,dashboardRoutes);
+app.use(authRoutes);
+app.use(dashboardRoutes);
 // app.use('/dist/', profileRoutes);
 // app.use('/dist/', paymentRoutes);
 

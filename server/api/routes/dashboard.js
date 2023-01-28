@@ -5,15 +5,15 @@ const express = require('express');
 const router = express.Router();
 
 
-router.get('/dashboard',async(req,res)=>{
+router.get('/dashboard',(req,res)=>{
     try {
         return res.render('index');
     }catch(e){
-        return res.render('404');
+        return res.render('404');   
     }
 });
 
-router.get('/morning_prayer',async(req,res)=>{
+router.get('/morning_prayer',(req,res)=>{
     try {
         return res.render('morning');
     }catch(e){
