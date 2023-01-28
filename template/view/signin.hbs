@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>head}}
+<body>
+    <!-- Loader starts-->
+    <div class="loader-wrapper">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"> </div>
+        <div class="dot"></div>
+    </div>
+    <!-- Loader ends-->
+
+    <!-- login page start-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-5"><img class="bg-img-cover bg-center" src="../assets/images/login/3.jpg"
+                    alt="looginpage"></div>
+            <div class="col-xl-7 p-0">
+                <div class="login-card">
+                    <div>
+                        {{!-- <div>
+                            <a class="logo" href="index.html">
+                            <img class="img-fluid for-light" src="../assets/images/login/logo.png" style = "height:50px" alt="looginpage">
+                            </a>
+                        </div> --}}
+                        <div class="login-main">
+                            <form id = "form" class="theme-form">
+                                <h4 class="text-center">Sign in to account</h4>
+                                <p class="text-center">Enter your email & password to login</p>
+                                <div class="error text-center text-danger fw-bold h5"></div>
+                                <div class="form-group">
+                                    <label class="col-form-label"> Email Address </label>
+                                    <input class="form-control" name ="email" type="email" required="" placeholder="florentsalijuu@gmail.com">
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">Password</label>
+                                    <div class="form-input position-relative">
+                                        <input class="form-control" type="password" name="password" required=""
+                                            placeholder="*********">
+                                        <div class="show-hide"><span class="show"> </span></div>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-0">
+                                    <div class="checkbox p-0">
+                                        <input id="checkbox1" type="checkbox">
+                                        {{!-- <label class="text-muted" for="checkbox1">Remember password</label> --}}
+                                    {{!-- </div><a class="link" href="forget-password.html">Forgot password?</a> --}}
+                                    <div class="text-end mt-2">
+                                        <button class="btn btn-primary btn-block w-100" type="submit">Sign in </button>
+                                    </div>
+                                </div>
+                                <div class="login-social-title">
+                                    <h6>Or Sign in with </h6>
+                                </div>
+                                <div class="form-group">
+                                    <ul class="login-social">
+                                        <li><a href="https://www.linkedin.com/" target="_blank"><i
+                                                    data-feather="linkedin"></i></a></li>
+                                        <li><a href="https://twitter.com/" target="_blank"><i
+                                                    data-feather="twitter"></i></a></li>
+                                        <li><a href="https://www.facebook.com/" target="_blank"><i
+                                                    data-feather="facebook"></i></a></li>
+                                        <li><a href="https://www.instagram.com/" target="_blank"><i
+                                                    data-feather="instagram"></i></a></li>
+                                    </ul>
+                                </div>
+                            
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="../assets/js/custom/signin.js"></script>
+        <!-- latest jquery-->
+        <script src="../assets/js/jquery-3.6.0.min.js"></script>
+        <!-- Bootstrap js-->
+        <script src="../assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+        <!-- feather icon js-->
+        <script src="../assets/js/icons/feather-icon/feather.min.js"></script>
+        <script src="../assets/js/icons/feather-icon/feather-icon.js"></script>
+        <!-- scrollbar js-->
+        <!-- Sidebar jquery-->
+        <script src="../assets/js/config.js"></script>
+        <!-- Template js-->
+        <script src="../assets/js/script.js"></script>
+        <!-- login js-->
+    </div>
+</body>
+
+
+</html>
