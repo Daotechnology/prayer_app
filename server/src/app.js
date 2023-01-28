@@ -41,7 +41,7 @@ app.use(morgan('tiny'));
 
 // //Configuring Routers
 const authRoutes = require('./../api/routes/authentication');
-// const profileRoutes = require('./../api/routes/profile');
+const dashboardRoutes = require('./../api/routes/dashboard');
 // const paymentRoutes = require('./../api/routes/payment');
 
 
@@ -49,7 +49,7 @@ app.get('/', (req, res) => {
   res.send('Hello World');
 });
 
-app.use(authRoutes);
+app.use(authRoutes,dashboardRoutes);
 // app.use('/dist/', profileRoutes);
 // app.use('/dist/', paymentRoutes);
 
