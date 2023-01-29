@@ -13,7 +13,7 @@ form.addEventListener("submit", async (e) => {
         if (validate.data.error !== false) {
             throw new Error(validate.data.errorMsg);
         }
-        location.href = '/template/index.html';
+        location.href = '/dashboard';
     } catch(e){
         error.innerHTML = e.message;
         setTimeout(()=>{
