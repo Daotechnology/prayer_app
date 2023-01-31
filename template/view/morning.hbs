@@ -62,33 +62,40 @@
                                             <div class="col-md-12">
                                                 <div class="mb-3">
                                                     <label class="form-label f-w-500">Title</label>
-                                                    <input class="form-control" type="text" placeholder="Season of Ephiphany">
+                                                    <input class="form-control" id = "title" type="text" placeholder="Season of Ephiphany">
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div>
                                                     <label class="form-label f-w-500">Prayer</label>
-                                                    <textarea class="form-control" rows="5"
+                                                    <textarea id = "" id="prayer" class="form-control" rows="5"
                                                         placeholder="Enter Prayer For Today"></textarea>
                                                 </div>
                                             </div>
                                           <div>
-                                            <div class="col-md-12">
-                                                <div>
-                                                    <label class="form-label f-w-500">Scripture</label>
-                                                    <textarea class="form-control" rows="5"
-                                                        placeholder="Enter Scripture"></textarea>
-                                                </div>
+
+                                            <div class = "dynamic_scripture">                                               
+                                            
                                             </div>
 
                                             <div class="col-md-12 mt-2">
                                                 <div class="mb-3">
                                                     <label class="form-label f-w-500">Scripture Verse</label>
-                                                    <input class="form-control" type="text" placeholder="Isaih 6:7">
+                                                    <input class="form-control" id = "verse" value ="romans2:3" type="text" placeholder="Isaih 6:7">
                                                 </div>
                                             </div>
+
+                                            <div class="col-md-12">
+                                                <div>
+                                                    <label class="form-label f-w-500">Scripture</label>
+                                                    <textarea  id ="scripture" class="form-control" rows="5"
+                                                        placeholder="Enter Scripture"></textarea>
+                                                </div>
+                                            </div>
+
+                                            
                                             <div class = "text-end">
-                                                <button class="btn btn-primary btn-sm" type="submit">Add <span class = "text-white">++</span></button>
+                                                <button class="btn btn-primary btn-sm mt-2 add" type="submit">Add <span class = "text-white">++</span></button>
                                             </div>
                                           </div>   
                                         </div>
@@ -260,6 +267,9 @@
             </footer>
         </div>
     </div>
+    <div class="token d-none">{{token}}</div>
+    {{!-- Cutom Account --}}
+    <script src="../assets/js/custom/morning.js"></script>
     <!-- latest jquery-->
     <script src="../assets/js/jquery-3.6.0.min.js"></script>
     <!-- Bootstrap js-->

@@ -1,122 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
 {{>index_head}}
 
-  <body onload="startTime()">
-    <!-- tap on top starts-->
-    <div class="tap-top"><i data-feather="chevrons-up"></i></div>
-    <!-- tap on tap ends-->
-    <!-- Loader starts-->
-    <div class="loader-wrapper">
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"> </div>
-      <div class="dot"></div>
-    </div>
-    <!-- Loader ends-->
-    <!-- page-wrapper Start-->
-    <div class="page-wrapper compact-wrapper" id="pageWrapper">
-      <!-- Page Header Start-->
-     {{>page_header}}
-      <!-- Page Header Ends-->
+<body onload="startTime()">
+  <!-- tap on top starts-->
+  <div class="tap-top"><i data-feather="chevrons-up"></i></div>
+  <!-- tap on tap ends-->
+  <!-- Loader starts-->
+  <div class="loader-wrapper">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"> </div>
+    <div class="dot"></div>
+  </div>
+  <!-- Loader ends-->
+  <!-- page-wrapper Start-->
+  <div class="page-wrapper compact-wrapper" id="pageWrapper">
+    <!-- Page Header Start-->
+    {{>page_header}}
+    <!-- Page Header Ends-->
 
-      <!-- Page Body Start-->
-      <div class="page-body-wrapper">
-        <!-- Page Sidebar Start-->
-        {{>sidebar}}
-        <!-- Page Sidebar Ends-->
-        <div class="page-body">
-          <div class="container-fluid">
-            <div class="page-title">
-              <div class="row">
-                <div class="col-sm-6">
-                  <h3>Default</h3>
-                </div>
-                <div class="col-sm-6">
-                  <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html"><i data-feather="home"></i></a></li>
-                    <li class="breadcrumb-item">Dashboard</li>
-                    <li class="breadcrumb-item active">Default</li>
-                  </ol>
-                </div>
+    <!-- Page Body Start-->
+    <div class="page-body-wrapper">
+      <!-- Page Sidebar Start-->
+      {{>sidebar}}
+      <!-- Page Sidebar Ends-->
+      <div class="page-body">
+        <div class="container-fluid">
+          <div class="page-title">
+            <div class="row">
+              <div class="col-sm-6">
+                <h3>Default</h3>
+              </div>
+              <div class="col-sm-6">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="/dashboard"><i data-feather="home"></i></a></li>
+                  <li class="breadcrumb-item">Dashboard</li>
+                  <li class="breadcrumb-item active">Default</li>
+                </ol>
               </div>
             </div>
           </div>
-          <!-- Container-fluid starts-->
-          <div class="container-fluid dashboard-default">
-            <div class="row">
-              <div class="col-xxl-6 col-xl-5 col-lg-6 dash-45 box-col-40">
-                <div class="card profile-greeting">               
-                  <div class="card-body">
-                    <div class="d-sm-flex d-block justify-content-between">
-                      <div class="flex-grow-1"> 
-                        <div class="weather d-flex">
-                          <h2 class="f-w-400"> <span>28<sup><i class="fa fa-circle-o f-10"></i></sup>C </span></h2>
-                          <div class="span sun-bg"><i class="icofont icofont-sun font-primary"></i></div>
-                        </div><span class="font-primary f-w-700">Sunny Day</span>
-                        <p>Beautiful Sunny Day Walk</p>
-                      </div>
-                      <div class="badge-group">
-                        <div class="badge badge-light-primary f-12">                         <i class="fa fa-clock-o"></i><span id="txt"></span></div>
+        </div>
+        <!-- Container-fluid starts-->
+        <div class="container-fluid dashboard-default">
+          <div class="row">
+            <div class="col-xxl-6 col-xl-5 col-lg-6 dash-45 box-col-40">
+              <div class="card profile-greeting">
+                <div class="card-body">
+                  <div class="d-sm-flex d-block justify-content-between">
+                    <div class="flex-grow-1">
+                      <div class="weather d-flex">
+                        <h2 class="f-w-400"> <span>28<sup><i class="fa fa-circle-o f-10"></i></sup>C </span></h2>
+                        <div class="span sun-bg"><i class="icofont icofont-sun font-primary"></i></div>
+                      </div><span class="font-primary f-w-700">Sunny Day</span>
+                      <p>Beautiful Sunny Day Walk</p>
+                    </div>
+                    <div class="badge-group">
+                      <div class="badge badge-light-primary f-12"> <i class="fa fa-clock-o"></i><span id="txt"></span>
                       </div>
                     </div>
-                    <div class="greeting-user"> 
-                      <div class="profile-vector">
-                        <ul class="dots-images">
-                          <li class="dot-small bg-info dot-1"></li>
-                          <li class="dot-medium bg-primary dot-2"></li>
-                          <li class="dot-medium bg-info dot-3"></li>
-                          <li class="semi-medium bg-primary dot-4"></li>
-                          <li class="dot-small bg-info dot-5"></li>
-                          <li class="dot-big bg-info dot-6"></li>
-                          <li class="dot-small bg-primary dot-7"></li>
-                          <li class="semi-medium bg-primary dot-8"></li>
-                          <li class="dot-big bg-info dot-9"></li>
-                        </ul><img class="img-fluid" src="../assets/images/dashboard/default/profile.png" alt="">
-                        <ul class="vector-image"> 
-                          <li> <img src="../assets/images/dashboard/default/ribbon1.png" alt=""></li>
-                          <li> <img src="../assets/images/dashboard/default/ribbon3.png" alt=""></li>
-                          <li> <img src="../assets/images/dashboard/default/ribbon4.png" alt=""></li>
-                          <li> <img src="../assets/images/dashboard/default/ribbon5.png" alt=""></li>
-                          <li> <img src="../assets/images/dashboard/default/ribbon6.png" alt=""></li>
-                          <li> <img src="../assets/images/dashboard/default/ribbon7.png" alt=""></li>
-                        </ul>
-                      </div>
-                      <h4><a href="user-profile.html"><span>Welcome Back</span> John  </a><span class="right-circle"><i class="fa fa-check-circle font-primary f-14 middle"></i></span></h4>
-                      <div><span class="badge badge-primary">Your 5</span><span class="font-primary f-12 middle f-w-500 ms-2"> Task Is Pending</span></div>
+                  </div>
+                  <div class="greeting-user">
+                    <div class="profile-vector">
+                      <ul class="dots-images">
+                        <li class="dot-small bg-info dot-1"></li>
+                        <li class="dot-medium bg-primary dot-2"></li>
+                        <li class="dot-medium bg-info dot-3"></li>
+                        <li class="semi-medium bg-primary dot-4"></li>
+                        <li class="dot-small bg-info dot-5"></li>
+                        <li class="dot-big bg-info dot-6"></li>
+                        <li class="dot-small bg-primary dot-7"></li>
+                        <li class="semi-medium bg-primary dot-8"></li>
+                        <li class="dot-big bg-info dot-9"></li>
+                      </ul><img class="img-fluid" src="../assets/images/dashboard/default/profile.png" alt="">
+                      <ul class="vector-image">
+                        <li> <img src="../assets/images/dashboard/default/ribbon1.png" alt=""></li>
+                        <li> <img src="../assets/images/dashboard/default/ribbon3.png" alt=""></li>
+                        <li> <img src="../assets/images/dashboard/default/ribbon4.png" alt=""></li>
+                        <li> <img src="../assets/images/dashboard/default/ribbon5.png" alt=""></li>
+                        <li> <img src="../assets/images/dashboard/default/ribbon6.png" alt=""></li>
+                        <li> <img src="../assets/images/dashboard/default/ribbon7.png" alt=""></li>
+                      </ul>
                     </div>
+                    <h4><a href=""><span>Welcome Back</span> {{email}} </a><span class="right-circle"><i
+                          class="fa fa-check-circle font-primary f-14 middle"></i></span></h4>
+                    <div><span class="badge badge-primary">Your 5</span><span
+                        class="font-primary f-12 middle f-w-500 ms-2"> Task Is Pending</span></div>
                   </div>
                 </div>
               </div>
-              <div class="col-xl-3 col-lg-6 col-md-6 box-col-30">
-                <div class="card total-revenue overflow-hidden">
-                  <div class="card-header">
-                    <div class="d-flex justify-content-between">
-                      <div class="flex-grow-1">
-                        <p class="square-after f-w-600 header-text-primary">Admob Total Revenue<i class="fa fa-circle"></i></p>
-                        <h4>96.564%</h4>
-                      </div>
-                      <div class="setting-list">
-                        <ul class="list-unstyled setting-option">
-                          <li>
-                            <div class="setting-light"><i class="icon-layout-grid2"></i></div>
-                          </li>
-                          <li><i class="view-html fa fa-code font-white"></i></li>
-                          <li><i class="icofont icofont-maximize full-card font-white"></i></li>
-                          <li><i class="icofont icofont-minus minimize-card font-white"></i></li>
-                          <li><i class="icofont icofont-refresh reload-card font-white"></i></li>
-                          <li><i class="icofont icofont-error close-card font-white"> </i></li>
-                        </ul>
-                      </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6 box-col-30">
+              <div class="card total-revenue overflow-hidden">
+                <div class="card-header">
+                  <div class="d-flex justify-content-between">
+                    <div class="flex-grow-1">
+                      <p class="square-after f-w-600 header-text-primary">Admob Total Revenue<i
+                          class="fa fa-circle"></i></p>
+                      <h4>96.564%</h4>
+                    </div>
+                    <div class="setting-list">
+                      <ul class="list-unstyled setting-option">
+                        <li>
+                          <div class="setting-light"><i class="icon-layout-grid2"></i></div>
+                        </li>
+                        <li><i class="view-html fa fa-code font-white"></i></li>
+                        <li><i class="icofont icofont-maximize full-card font-white"></i></li>
+                        <li><i class="icofont icofont-minus minimize-card font-white"></i></li>
+                        <li><i class="icofont icofont-refresh reload-card font-white"></i></li>
+                        <li><i class="icofont icofont-error close-card font-white"> </i></li>
+                      </ul>
                     </div>
                   </div>
-                  <div class="card-body p-0">
-                    <div class="revenue-chart" id="revenue-chart"></div>
-                    <div class="code-box-copy">
-                      <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#revenue"><i class="icofont icofont-copy-alt"></i></button>
-                      <pre><code class="language-html" id="revenue">&lt;div class="card total-revenue overflow-hidden"&gt;
+                </div>
+                <div class="card-body p-0">
+                  <div class="revenue-chart" id="revenue-chart"></div>
+                  <div class="code-box-copy">
+                    <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#revenue"><i
+                        class="icofont icofont-copy-alt"></i></button>
+                    <pre><code class="language-html" id="revenue">&lt;div class="card total-revenue overflow-hidden"&gt;
   &lt;div class="card-header"&gt;
     &lt;div class="d-flex justify-content-between"&gt;
       &lt;div class="flex-grow-1"&gt;
@@ -142,41 +147,46 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
+                  </div>
+                </div>
+              </div>
+              <div class="card total-investment">
+                <div class="card-header pb-0">
+                  <div class="d-flex justify-content-between">
+                    <div class="flex-grow-1">
+                      <p class="square-after f-w-600 header-text-primary">Total Investment<i class="fa fa-circle"> </i>
+                      </p>
+                      <h4>96.564%</h4>
+                    </div>
+                    <div class="setting-list">
+                      <ul class="list-unstyled setting-option">
+                        <li>
+                          <div class="setting-light"><i class="icon-layout-grid2"></i></div>
+                        </li>
+                        <li><i class="view-html fa fa-code font-white"></i></li>
+                        <li><i class="icofont icofont-maximize full-card font-white"></i></li>
+                        <li><i class="icofont icofont-minus minimize-card font-white"></i></li>
+                        <li><i class="icofont icofont-refresh reload-card font-white"></i></li>
+                        <li><i class="icofont icofont-error close-card font-white"> </i></li>
+                      </ul>
                     </div>
                   </div>
                 </div>
-                <div class="card total-investment">
-                  <div class="card-header pb-0">
-                    <div class="d-flex justify-content-between">
-                      <div class="flex-grow-1"> 
-                        <p class="square-after f-w-600 header-text-primary">Total Investment<i class="fa fa-circle"> </i></p>
-                        <h4>96.564%</h4>
-                      </div>
-                      <div class="setting-list">
-                        <ul class="list-unstyled setting-option">
-                          <li>
-                            <div class="setting-light"><i class="icon-layout-grid2"></i></div>
-                          </li>
-                          <li><i class="view-html fa fa-code font-white"></i></li>
-                          <li><i class="icofont icofont-maximize full-card font-white"></i></li>
-                          <li><i class="icofont icofont-minus minimize-card font-white"></i></li>
-                          <li><i class="icofont icofont-refresh reload-card font-white"></i></li>
-                          <li><i class="icofont icofont-error close-card font-white"> </i></li>
-                        </ul>
-                      </div>
+                <div class="card-body">
+                  <div class="progress sm-progress-bar">
+                    <div class="progress-colors" role="progressbar" style="width: 100%" aria-valuenow="100"
+                      aria-valuemin="0" aria-valuemax="100">
+                      <div class="bg-secondary progress-1"></div>
+                      <div class="bg-primary progress-2"></div>
                     </div>
                   </div>
-                  <div class="card-body">
-                    <div class="progress sm-progress-bar">
-                      <div class="progress-colors" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                        <div class="bg-secondary progress-1"></div>
-                        <div class="bg-primary progress-2"></div>
-                      </div>
-                    </div>
-                    <div class="bottom-progress"><span class="badge round-badge-primary font-worksans">3.56% <i class="fa fa-caret-up"></i></span><span class="pull-right font-primary font-worksans f-w-700">75%</span></div>
-                    <div class="code-box-copy">
-                      <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#investment"><i class="icofont icofont-copy-alt"></i></button>
-                      <pre><code class="language-html" id="investment">&lt;div class="card total-investment"&gt;
+                  <div class="bottom-progress"><span class="badge round-badge-primary font-worksans">3.56% <i
+                        class="fa fa-caret-up"></i></span><span
+                      class="pull-right font-primary font-worksans f-w-700">75%</span></div>
+                  <div class="code-box-copy">
+                    <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#investment"><i
+                        class="icofont icofont-copy-alt"></i></button>
+                    <pre><code class="language-html" id="investment">&lt;div class="card total-investment"&gt;
   &lt;div class="card-header pb-0"&gt;
     &lt;div class="d-flex justify-content-between"&gt;
       &lt;div class="flex-grow-1"&gt;
@@ -206,52 +216,54 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
-                    </div>
                   </div>
                 </div>
               </div>
+            </div>
 
-              <div class="col-xxl-3 col-xl-4 col-md-6 dash-30 box-col-30">
-                <div class="card our-user">
-                  <div class="card-header pb-0">
-                    <div class="d-flex justify-content-between">
-                      <div class="flex-grow-1"> 
-                        <p class="square-after f-w-600 header-text-primary">User Demography<i class="fa fa-circle"></i></p>
-                        <h4>96.564%</h4>
-                      </div>
-                      <div class="setting-list">
-                        <ul class="list-unstyled setting-option">
-                          <li>
-                            <div class="setting-light"><i class="icon-layout-grid2"></i></div>
-                          </li>
-                          <li><i class="view-html fa fa-code font-white"></i></li>
-                          <li><i class="icofont icofont-maximize full-card font-white"></i></li>
-                          <li><i class="icofont icofont-minus minimize-card font-white"></i></li>
-                          <li><i class="icofont icofont-refresh reload-card font-white"></i></li>
-                          <li><i class="icofont icofont-error close-card font-white"> </i></li>
-                        </ul>
-                      </div>
+            <div class="col-xxl-3 col-xl-4 col-md-6 dash-30 box-col-30">
+              <div class="card our-user">
+                <div class="card-header pb-0">
+                  <div class="d-flex justify-content-between">
+                    <div class="flex-grow-1">
+                      <p class="square-after f-w-600 header-text-primary">User Demography<i class="fa fa-circle"></i>
+                      </p>
+                      <h4>96.564%</h4>
+                    </div>
+                    <div class="setting-list">
+                      <ul class="list-unstyled setting-option">
+                        <li>
+                          <div class="setting-light"><i class="icon-layout-grid2"></i></div>
+                        </li>
+                        <li><i class="view-html fa fa-code font-white"></i></li>
+                        <li><i class="icofont icofont-maximize full-card font-white"></i></li>
+                        <li><i class="icofont icofont-minus minimize-card font-white"></i></li>
+                        <li><i class="icofont icofont-refresh reload-card font-white"></i></li>
+                        <li><i class="icofont icofont-error close-card font-white"> </i></li>
+                      </ul>
                     </div>
                   </div>
-                  <div class="card-body">
-                    <div class="user-chart">
-                      <div id="user-chart"></div>
-                      <div class="icon-donut"><i data-feather="arrow-up-circle"></i></div>
-                    </div>
-                    <ul> 
-                      <li>
-                        <p class="f-w-600 font-primary f-12">Desktop</p><span class="f-w-600">96.564%</span>
-                      </li>
-                      <li> 
-                        <p class="f-w-600 font-primary f-12">Mobile </p><span class="f-w-600">92.624%</span>
-                      </li>
-                      <li> 
-                        <p class="f-w-600 font-primary f-12">Tablet </p><span class="f-w-600">46.564%</span>
-                      </li>
-                    </ul>
-                    <div class="code-box-copy">
-                      <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#users"><i class="icofont icofont-copy-alt"></i></button>
-                      <pre><code class="language-html" id="users">&lt;div class="card our-user"&gt;
+                </div>
+                <div class="card-body">
+                  <div class="user-chart">
+                    <div id="user-chart"></div>
+                    <div class="icon-donut"><i data-feather="arrow-up-circle"></i></div>
+                  </div>
+                  <ul>
+                    <li>
+                      <p class="f-w-600 font-primary f-12">Desktop</p><span class="f-w-600">96.564%</span>
+                    </li>
+                    <li>
+                      <p class="f-w-600 font-primary f-12">Mobile </p><span class="f-w-600">92.624%</span>
+                    </li>
+                    <li>
+                      <p class="f-w-600 font-primary f-12">Tablet </p><span class="f-w-600">46.564%</span>
+                    </li>
+                  </ul>
+                  <div class="code-box-copy">
+                    <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#users"><i
+                        class="icofont icofont-copy-alt"></i></button>
+                    <pre><code class="language-html" id="users">&lt;div class="card our-user"&gt;
   &lt;div class="card-header pb-0"&gt;
     &lt;div class="d-flex justify-content-between"&gt;
       &lt;div class="flex-grow-1"&gt;
@@ -295,41 +307,43 @@
     &lt;/ul&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
-                    </div>
                   </div>
                 </div>
               </div>
-              {{!--  --}}
-             
-              {{!-- <div class="col-xl-12 box-col-12">
-                <div class="card total-growth">
-                  <div class="card-header pb-0">
-                    <div class="d-flex justify-content-between">
-                      <div class="flex-grow-1"> 
-                        <p class="square-after f-w-600 header-text-primary">Our Total Growth<i class="fa fa-circle"> </i></p>
-                        <h4>96.564%</h4>
-                      </div>
-                      <div class="setting-list">
-                        <ul class="list-unstyled setting-option">
-                          <li>
-                            <div class="setting-light"><i class="icon-layout-grid2"></i></div>
-                          </li>
-                          <li><i class="view-html fa fa-code font-white"></i></li>
-                          <li><i class="icofont icofont-maximize full-card font-white"></i></li>
-                          <li><i class="icofont icofont-minus minimize-card font-white"></i></li>
-                          <li><i class="icofont icofont-refresh reload-card font-white"></i></li>
-                          <li><i class="icofont icofont-error close-card font-white"> </i></li>
-                        </ul>
-                      </div>
+            </div>
+            {{!-- --}}
+
+            {{!-- <div class="col-xl-12 box-col-12">
+              <div class="card total-growth">
+                <div class="card-header pb-0">
+                  <div class="d-flex justify-content-between">
+                    <div class="flex-grow-1">
+                      <p class="square-after f-w-600 header-text-primary">Our Total Growth<i class="fa fa-circle"> </i>
+                      </p>
+                      <h4>96.564%</h4>
+                    </div>
+                    <div class="setting-list">
+                      <ul class="list-unstyled setting-option">
+                        <li>
+                          <div class="setting-light"><i class="icon-layout-grid2"></i></div>
+                        </li>
+                        <li><i class="view-html fa fa-code font-white"></i></li>
+                        <li><i class="icofont icofont-maximize full-card font-white"></i></li>
+                        <li><i class="icofont icofont-minus minimize-card font-white"></i></li>
+                        <li><i class="icofont icofont-refresh reload-card font-white"></i></li>
+                        <li><i class="icofont icofont-error close-card font-white"> </i></li>
+                      </ul>
                     </div>
                   </div>
-                  <div class="card-body pb-0">
-                    <div class="growth-chart"> 
-                      <div id="growth-chart"></div>
-                    </div>
-                    <div class="code-box-copy">
-                      <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#growth"><i class="icofont icofont-copy-alt"></i></button>
-                      <pre><code class="language-html" id="growth">&lt;div class="card total-growth"&gt;
+                </div>
+                <div class="card-body pb-0">
+                  <div class="growth-chart">
+                    <div id="growth-chart"></div>
+                  </div>
+                  <div class="code-box-copy">
+                    <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#growth"><i
+                        class="icofont icofont-copy-alt"></i></button>
+                    <pre><code class="language-html" id="growth">&lt;div class="card total-growth"&gt;
   &lt;div class="card-header pb-0"&gt;
     &lt;div class="d-flex justify-content-between"&gt;
       &lt;div class="flex-grow-1"&gt;
@@ -356,12 +370,12 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
-                    </div>
                   </div>
                 </div>
-              </div> --}}
+              </div>
+            </div> --}}
 
-              <!-- Zero Configuration  Starts-->
+            <!-- Zero Configuration  Starts-->
             <div class="col-xl-12 box-col-12 col-sm-12">
               <div class="card">
                 <div class="card-header pb-0">
@@ -583,69 +597,69 @@
               </div>
             </div>
             <!-- Zero Configuration  Ends-->
-             
-            </div>
-          </div>
-          <!-- Container-fluid Ends-->
-        </div>
-        <!-- footer start-->
-        <footer class="footer">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-6 p-0 footer-left">
-                <p class="mb-0">Copyright © 2023 Tivo. All rights reserved.</p>
-              </div>
-              <div class="col-md-6 p-0 footer-right">
-                <p class="mb-0">Hand-crafted & made with <i class="fa fa-heart font-danger"></i></p>
-              </div>
-            </div>
-          </div>
-        </footer>
-      </div>
-    </div>
 
-    <!-- latest jquery-->
-    <script src="../assets/js/jquery-3.6.0.min.js"></script>
-    <!-- Bootstrap js-->
-    <script src="../assets/js/bootstrap/bootstrap.bundle.min.js"></script>
-    <!-- feather icon js-->
-    <script src="../assets/js/icons/feather-icon/feather.min.js"></script>
-    <script src="../assets/js/icons/feather-icon/feather-icon.js"></script>
-    <!-- scrollbar js-->
-    <script src="../assets/js/scrollbar/simplebar.js"></script>
-    <script src="../assets/js/scrollbar/custom.js"></script>
-    <!-- Sidebar jquery-->
-    <script src="../assets/js/config.js"></script>
-    <script src="../assets/js/sidebar-menu.js"></script>
-    <script src="../assets/js/datatable/datatables/jquery.dataTables.min.js"></script>
-    <script src="../assets/js/datatable/datatables/datatable.custom.js"></script>
-    <script src="../assets/js/chart/chartist/chartist.js"></script>
-    <script src="../assets/js/chart/chartist/chartist-plugin-tooltip.js"></script>
-    <script src="../assets/js/chart/apex-chart/apex-chart.js"></script>
-    <script src="../assets/js/chart/apex-chart/stock-prices.js"></script>
-    <script src="../assets/js/prism/prism.min.js"></script>
-    <script src="../assets/js/clipboard/clipboard.min.js"></script>
-    <script src="../assets/js/custom-card/custom-card.js"></script>
-    <script src="../assets/js/notify/bootstrap-notify.min.js"></script>
-    <script src="../assets/js/vector-map/jquery-jvectormap-2.0.2.min.js"></script>
-    <script src="../assets/js/vector-map/map/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="../assets/js/vector-map/map/jquery-jvectormap-us-aea-en.js"></script>
-    <script src="../assets/js/vector-map/map/jquery-jvectormap-uk-mill-en.js"></script>
-    <script src="../assets/js/vector-map/map/jquery-jvectormap-au-mill.js"></script>
-    <script src="../assets/js/vector-map/map/jquery-jvectormap-chicago-mill-en.js"></script>
-    <script src="../assets/js/vector-map/map/jquery-jvectormap-in-mill.js"></script>
-    <script src="../assets/js/vector-map/map/jquery-jvectormap-asia-mill.js"></script>
-    <script src="../assets/js/dashboard/default.js"></script>
-    <script src="../assets/js/notify/index.js"></script>
-    <script src="../assets/js/typeahead/handlebars.js"></script>
-    <script src="../assets/js/typeahead/typeahead.bundle.js"></script>
-    <script src="../assets/js/typeahead/typeahead.custom.js"></script>
-    <script src="../assets/js/typeahead-search/handlebars.js"></script>
-    <script src="../assets/js/typeahead-search/typeahead-custom.js"></script>
-    <!-- Template js-->
-    <script src="../assets/js/script.js"></script>
-    <script src="../assets/js/theme-customizer/customizer.js">  </script>
-    <!-- login js-->
-  </body>
+          </div>
+        </div>
+        <!-- Container-fluid Ends-->
+      </div>
+      <!-- footer start-->
+      <footer class="footer">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6 p-0 footer-left">
+              <p class="mb-0">Copyright © 2023 Tivo. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 p-0 footer-right">
+              <p class="mb-0">Hand-crafted & made with <i class="fa fa-heart font-danger"></i></p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- latest jquery-->
+  <script src="../assets/js/jquery-3.6.0.min.js"></script>
+  <!-- Bootstrap js-->
+  <script src="../assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+  <!-- feather icon js-->
+  <script src="../assets/js/icons/feather-icon/feather.min.js"></script>
+  <script src="../assets/js/icons/feather-icon/feather-icon.js"></script>
+  <!-- scrollbar js-->
+  <script src="../assets/js/scrollbar/simplebar.js"></script>
+  <script src="../assets/js/scrollbar/custom.js"></script>
+  <!-- Sidebar jquery-->
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/sidebar-menu.js"></script>
+  <script src="../assets/js/datatable/datatables/jquery.dataTables.min.js"></script>
+  <script src="../assets/js/datatable/datatables/datatable.custom.js"></script>
+  <script src="../assets/js/chart/chartist/chartist.js"></script>
+  <script src="../assets/js/chart/chartist/chartist-plugin-tooltip.js"></script>
+  <script src="../assets/js/chart/apex-chart/apex-chart.js"></script>
+  <script src="../assets/js/chart/apex-chart/stock-prices.js"></script>
+  <script src="../assets/js/prism/prism.min.js"></script>
+  <script src="../assets/js/clipboard/clipboard.min.js"></script>
+  <script src="../assets/js/custom-card/custom-card.js"></script>
+  <script src="../assets/js/notify/bootstrap-notify.min.js"></script>
+  <script src="../assets/js/vector-map/jquery-jvectormap-2.0.2.min.js"></script>
+  <script src="../assets/js/vector-map/map/jquery-jvectormap-world-mill-en.js"></script>
+  <script src="../assets/js/vector-map/map/jquery-jvectormap-us-aea-en.js"></script>
+  <script src="../assets/js/vector-map/map/jquery-jvectormap-uk-mill-en.js"></script>
+  <script src="../assets/js/vector-map/map/jquery-jvectormap-au-mill.js"></script>
+  <script src="../assets/js/vector-map/map/jquery-jvectormap-chicago-mill-en.js"></script>
+  <script src="../assets/js/vector-map/map/jquery-jvectormap-in-mill.js"></script>
+  <script src="../assets/js/vector-map/map/jquery-jvectormap-asia-mill.js"></script>
+  <script src="../assets/js/dashboard/default.js"></script>
+  <script src="../assets/js/notify/index.js"></script>
+  <script src="../assets/js/typeahead/handlebars.js"></script>
+  <script src="../assets/js/typeahead/typeahead.bundle.js"></script>
+  <script src="../assets/js/typeahead/typeahead.custom.js"></script>
+  <script src="../assets/js/typeahead-search/handlebars.js"></script>
+  <script src="../assets/js/typeahead-search/typeahead-custom.js"></script>
+  <!-- Template js-->
+  <script src="../assets/js/script.js"></script>
+  <script src="../assets/js/theme-customizer/customizer.js">  </script>
+  <!-- login js-->
+</body>
 
 </html>

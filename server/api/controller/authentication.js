@@ -1,12 +1,13 @@
 const express = require("express");
-const cookieParser = require('cookie-parser');
-const app = express();
 const validator = require('validator');
-
 const Signup = require('../model/Signup');
 
-//Cookies
-app.use(cookieParser());
+let localStorage;
+
+if (typeof localStorage === "undefined" || localStorage === null) {
+  let LocalStorage = require('node-localstorage').LocalStorage;
+  localStorage = new LocalStorage('./scratch');
+}
 
 
 const signin = async (req, res) => {
@@ -38,14 +39,14 @@ const signin = async (req, res) => {
     if(!user) {
         return res.send({error:'Email and Password is Incorrect'});
     }
-    const token = await user.generateTokens();
-    const times = parseInt(60 * 60 * 24 * 5 * 1000);
 
-    res.cookie('token',token,{
-        maxAge:times,
-        httpOnly:true,
-        // secure:true
-    });
+    const token = await user.generateTokens();
+
+    if (localStorage.getItem('token')) {
+      localStorage.removeItem('token');
+    } else {
+      localStorage.setItem('token', token);
+    }
 
     //Remove Some Details from the User Like the password
      user = user.toJSON();
@@ -121,12 +122,11 @@ const signup = async (req, res) => {
       user = user.toJSON();
       delete user.password;
 
-      const times = parseInt(60 * 60 * 24 * 5 * 1000);
-    res.cookie('token',token, {
-        maxAge:times,
-        httpOnly:true,
-        // secure:true
-    });
+      if (localStorage.getItem('token')) {
+        localStorage.removeItem('token');
+      } else {
+        localStorage.setItem('token', token);
+      }
       
     return res
       .json({ error: false, data:{token, user}, statusText: "User Successfully Signed Up" })
@@ -137,7 +137,38 @@ const signup = async (req, res) => {
   }
 };
 
+const change_password = async (req,res) => {
+  try {    
+    //Check Old Password
+    const user = await req.user.matchPassWord(req.body.old_password);
+    if (!user) {
+      throw new Error('Please Check your Old Password');
+    }
+    //Change Password
+    req.user.password = req.body.password;
+    await req.user.save();
+    return res
+      .json({ error: false, statusText: "Password Successfully Changed" })
+      .status(201);
+  }catch(e){
+    return res.status(200).json({ error: true, errorMsg: e.message });
+  }
+}
+
+const edit_profile = async(req,res) =>{
+  try {
+    if (!req.user) {
+      throw new Error('Authentication Failed')
+    }
+    const data = await Signup.findByIdAndUpdate(req.id,req.body);
+    return res
+      .json({ error: false, data, statusText: "User Profile Updated Successfully" })
+      .status(201);
+
+  }catch(e){
+    return res.status(200).json({ error: true, errorMsg: e.message });
+  }
+}
 
 
-
-module.exports = {signup, signin};
+module.exports = {signup, signin, change_password, edit_profile};

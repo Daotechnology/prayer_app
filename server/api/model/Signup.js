@@ -25,6 +25,18 @@ const UserSchema = mongoose.Schema({
             }
         }
     },
+    fullname:{
+        type:String
+    },
+    city:{
+        type:String
+    },
+    postal_code:{
+        type:String
+    },
+    about_me:{
+        type:String
+    },
     country:{
       type:String
     },
@@ -98,7 +110,7 @@ UserSchema.methods.matchPassWord = async function(oldpassword){
     const password = user.password;
     const validatePassword = await bcrypt.compare(oldpassword,password);
     if (!validatePassword) {
-        throw new Error('Old Password is Incorrect Please Try again Later');
+        return false;
     }
     return user;
 }
