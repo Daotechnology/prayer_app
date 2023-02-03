@@ -13,6 +13,14 @@ if (typeof localStorage === "undefined" || localStorage === null) {
   localStorage = new LocalStorage('./scratch');
 }
 
+// const Morning_Prayer = require('../model/morningPrayer');
+// const Confession = require('../model/Confession');
+// const Scripture = require('../model/Scripture');
+// const LordsPrayer = require('../model/LordsPrayer');
+// const closingPrayer = require('../model/closingPrayer');
+// const middayOpeningPrayer = require('../model/middayOpeningPrayer');
+
+
 router.get('/dashboard',validate,(req,res)=>{
     try {
         if (!req.token) {
@@ -31,15 +39,24 @@ router.get('/morning_prayer',validate, (req,res)=>{
         if (!req.token) {
             return res.redirect('/signin');
         }
-        return res.render('morning');
-    }catch(e){
-        return res.render('404'); 
+        return res.render('morning',{
+            token:req.token,
+            type:'morning_prayer'
+        });
+    } catch(e) {
+        return res.redirect('/signin');
     }
 })
 
-router.get('/confession',validate,(req,res)=>{
+router.get('/confession/:prayer',validate,(req,res)=>{
     try {
-        return res.render('confession');
+        if (!req.token) {
+            return res.render('signin');
+        }
+        return res.render('confession',{
+            token:req.token,
+            type:req.params.prayer
+        });
     }catch(e){
         return res.render('404'); 
     }
@@ -50,40 +67,68 @@ router.get('/scripture',validate,(req,res)=>{
         if (!req.token) {
             return res.redirect('/signin');
         }
-        return res.render('scripture');
+        return res.render('scripture',{
+            token:req.token,
+            type:'morning_prayer'
+        });
     }catch(e){
         return res.render('404'); 
     }
 })
 
-router.get('/lords_prayer',validate,(req,res)=>{
+router.get('/late_evening_scripture',validate,(req,res)=>{
     try {
         if (!req.token) {
             return res.redirect('/signin');
         }
-        return res.render('lords_prayer');
+        return res.render('scripture',{
+            token:req.token,
+            type:'late_evening_prayer'
+        });
     }catch(e){
         return res.render('404'); 
     }
 })
 
-router.get('/closing_prayer',validate,(req,res)=>{
+router.get('/lords_prayer/:prayer',validate,(req,res)=>{
     try {
         if (!req.token) {
             return res.redirect('/signin');
         }
-        return res.render('closing_prayer');
+        return res.render('lords_prayer', {
+            token:req.token,
+            type:req.params.prayer
+        });
+    }catch(e){
+        return res.render('404'); 
+    }
+})
+
+router.get('/closing_prayer/:prayer',validate,(req,res)=>{
+    try {
+        if (!req.token) {
+            return res.redirect('/signin');
+        }
+        return res.render('closing_prayer',{
+            token:req.token,
+            type:req.params.prayer
+        });
     }catch (e) {
         return res.render('404'); 
     }
 })
 
-router.get('/midday_opening',validate,(req,res)=>{
+router.get('/midday_opening/:prayer',validate,(req,res)=>{
     try {
         if (!req.token) {
             return res.redirect('/signin');
         }
-        return res.render('midday_opening');
+
+        return res.render('midday_opening',{
+            token:req.token,
+            type:req.params.prayer
+        });
+
     }catch (e) {
         return res.render('404'); 
     }
@@ -94,7 +139,10 @@ router.get('/midday_scripture',validate,(req,res)=>{
         if (!req.token) {
             return res.redirect('/signin');
         }
-        return res.render('midday_scripture');
+        return res.render('scripture',{
+            token:req.token,
+            type:'midday_prayer'
+        });
     }catch (e) {
         return res.render('404');
     }
@@ -105,7 +153,10 @@ router.get('/midday_closing',validate,(req,res)=>{
         if (!req.token) {
             return res.redirect('/signin');
         }
-        return res.render('midday_closing');
+        return res.render('closing_prayer',{
+            token:req.token,
+            type:'midday_prayer'
+        });
     }catch (e) {
         return res.render('404');
     }
@@ -116,9 +167,26 @@ router.get('/evening_prayer',validate,(req,res)=>{
         if (!req.token) {
             return res.redirect('/signin');
         }
-        return res.render('evening_prayer');
+        return res.render('morning',{
+            token:req.token,
+            type:'evening_prayer'
+        });
     }catch (e) {
         return res.render('404');
+    }
+})
+
+router.get('/evening_scripture',validate,(req,res)=>{
+    try {
+        if (!req.token) {
+            return res.redirect('/signin');
+        }
+        return res.render('scripture',{
+            token:req.token,
+            type:'evening_prayer'
+        });
+    }catch(e){
+        return res.render('404'); 
     }
 })
 

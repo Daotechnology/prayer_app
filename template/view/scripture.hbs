@@ -60,30 +60,32 @@
                                     <div class="card-body">
                                         <div class="row">
                                            <div>
-
+                                                <div class = "dynamic_scripture">                                               
+                                                
+                                                </div>
                                             <div class="col-md-12 mt-2">
                                                 <div class="mb-3">
                                                     <label class="form-label f-w-500">Scripture Verse</label>
-                                                    <input class="form-control" type="text" placeholder="Isaih6:7">
+                                                    <input id = "scripture" class="form-control" type="text" placeholder="Isaih6:7">
                                                 </div>
                                             </div>
 
                                             <div class="col-md-12">
                                                 <div>
                                                     <label class="form-label f-w-500">Bible Verse</label>
-                                                    <textarea class="form-control" rows="5"
+                                                    <textarea id = "verse" class="form-control" rows="5"
                                                         placeholder="Enter Scripture"></textarea>
                                                 </div>
                                             </div>
 
                                             <div class = "text-start mt-2">
-                                                <button class="btn btn-primary btn-sm" type="submit">Add <span class = "text-white">++</span></button>
+                                                <button class="btn btn-primary btn-sm btn add">Add <span class = "text-white">++</span></button>
                                             </div>
                                           </div>  
                                         </div>
                                     </div>
                                     <div class="card-footer text-center">
-                                        <button class="btn btn-primary" type="submit">Submit Scripture </button>
+                                        <button class="btn btn-primary" id ="btn_prayer">Submit Scripture </button>
                                     </div>
                                 </form>
                             </div> 
@@ -232,6 +234,10 @@
             </footer>
         </div>
     </div>
+    <div class="token d-none">{{token}}</div>
+    <div class="type d-none">{{type}}</div>
+    {{!-- Cutom Account --}}
+    <script src="../assets/js/custom/scripture.js"></script>
     <!-- latest jquery-->
     <script src="../assets/js/jquery-3.6.0.min.js"></script>
     <!-- Bootstrap js-->

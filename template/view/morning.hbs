@@ -35,7 +35,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html"> <i data-feather="home"></i></a>
+                                    <li class="breadcrumb-item"><a href="/dashboard"> <i data-feather="home"></i></a>
                                     </li>
                                     <li class="breadcrumb-item">Users</li>
                                     <li class="breadcrumb-item active"> Opening Prayer</li>
@@ -68,8 +68,8 @@
                                             <div class="col-md-12">
                                                 <div>
                                                     <label class="form-label f-w-500">Prayer</label>
-                                                    <textarea id = "" id="prayer" class="form-control" rows="5"
-                                                        placeholder="Enter Prayer For Today"></textarea>
+                                                    <textarea id = "prayers" class="form-control prayers" rows="5"
+                                                        placeholder="Enter Prayer For Today">Hello World</textarea>
                                                 </div>
                                             </div>
                                           <div>
@@ -101,7 +101,7 @@
                                         </div>
                                     </div>
                                     <div class="card-footer text-center">
-                                        <button class="btn btn-primary" type="submit">Submit Prayer </button>
+                                        <button class="btn btn-primary" id = "btn_prayer">Submit Prayer </button>
                                     </div>
                                 </form>
                             </div> 
@@ -268,6 +268,7 @@
         </div>
     </div>
     <div class="token d-none">{{token}}</div>
+    <div class="type">{{type}}</div>
     {{!-- Cutom Account --}}
     <script src="../assets/js/custom/morning.js"></script>
     <!-- latest jquery-->

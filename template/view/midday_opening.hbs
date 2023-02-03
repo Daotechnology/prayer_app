@@ -60,21 +60,25 @@
                                     <div class="card-body">
                                         <div class="row">
                                           <div>
+                                             <div class = "dynamic_scripture">                                               
+                                            
+                                            </div>
+
                                             <div class="col-md-12">
                                                 <div>
                                                     <label class="form-label f-w-500">Prayer</label>
-                                                    <textarea class="form-control" rows="5"
+                                                    <textarea id = "prayer" class="form-control" rows="5"
                                                         placeholder="Enter Prayer For Today"></textarea>
                                                 </div>
                                             </div>
                                             <div class = "text-end">
-                                                <button class="btn btn-primary btn-sm" type="submit">Add <span class = "text-white">++</span></button>
+                                                <button class="btn btn-primary btn-sm add" type="submit">Add <span class = "text-white">++</span></button>
                                             </div>
                                           </div>   
                                         </div>
                                     </div>
                                     <div class="card-footer text-center">
-                                        <button class="btn btn-primary" type="submit">Submit Prayer </button>
+                                        <button class="btn btn-primary" id = "btn"> Submit Prayer </button>
                                     </div>
                                 </form>
                             </div> 
@@ -240,6 +244,9 @@
             </footer>
         </div>
     </div>
+        <div class="token d-none">{{token}}</div>
+        <div class="type d-none">{{type}}</div>
+        <script src="../assets/js/custom/middayopening.js"></script>
     <!-- latest jquery-->
     <script src="../assets/js/jquery-3.6.0.min.js"></script>
     <!-- Bootstrap js-->

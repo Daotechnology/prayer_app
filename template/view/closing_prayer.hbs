@@ -62,27 +62,30 @@
                                             <div class="col-md-12">
                                                 <div class="mb-3">
                                                     <label class="form-label f-w-500">Title</label>
-                                                    <input class="form-control" type="text" placeholder="Season of Ephiphany">
+                                                    <input id = "title" class="form-control" type="text" placeholder="Season of Ephiphany">
                                                 </div>
                                             </div>
                                             
                                           <div>
+                                            <div class = "dynamic_scripture">                                               
+                                            
+                                            </div>
                                             <div class="col-md-12">
                                                 <div>
                                                     <label class="form-label f-w-500">Prayer</label>
-                                                    <textarea class="form-control" rows="5"
+                                                    <textarea id = "prayer" class="form-control" rows="5"
                                                         placeholder="Enter Scripture"></textarea>
                                                 </div>
                                             </div>
 
                                             <div class = "text-start mt-2">
-                                                <button class="btn btn-primary btn-sm" type="submit">Add <span class = "text-white">++</span></button>
+                                                <button class="btn btn-primary btn-sm add" type="submit">Add <span class = "text-white">++</span></button>
                                             </div>
                                           </div>   
                                         </div>
                                     </div>
                                     <div class="card-footer text-center">
-                                        <button class="btn btn-primary" type="submit">Submit Closing Prayer </button>
+                                        <button class="btn btn-primary" id = "btn"> Submit Closing Prayer </button>
                                     </div>
                                 </form>
                             </div> 
@@ -90,10 +93,10 @@
                                 <div class="card">
                                     <div class="card-header pb-0">
                                         {{!-- <h4 class="card-title mb-0">Closing Prayer</h4> --}}
-                                        <div class="card-options"><a class="card-options-collapse" href="#"
+                                        <div class="card-options"> <a class="card-options-collapse" href="#"
                                                 data-bs-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a><a
                                                 class="card-options-remove" href="#" data-bs-toggle="card-remove"><i
-                                                    class="fe fe-x"></i></a></div>
+                                                    class="fe fe-x"></i></a> </div>
                                     </div>
                                     <!-- Zero Configuration  Starts-->
                                     <div class="card">
@@ -249,6 +252,9 @@
         </div>
     </div>
     <!-- latest jquery-->
+    <div class="token d-none">{{token}}</div>
+    <div class="type d-none">{{type}}</div>
+    <script src="../assets/js/custom/closing_prayer.js"></script>
     <script src="../assets/js/jquery-3.6.0.min.js"></script>
     <!-- Bootstrap js-->
     <script src="../assets/js/bootstrap/bootstrap.bundle.min.js"></script>

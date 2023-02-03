@@ -60,30 +60,32 @@
                                     <div class="card-body">
                                         <div class="row">
                                            <div>
-
+                                            <div class = "dynamic_scripture">                                               
+                                            
+                                            </div>
                                             <div class="col-md-12 mt-2">
                                                 <div class="mb-3">
                                                     <label class="form-label f-w-500">Add Lords Prayer</label>
-                                                    <input class="form-control" type="text" placeholder="Our Father in Heaven">
+                                                    <input id ="lords_prayer" class="form-control" type="text" placeholder="Our Father in Heaven">
                                                 </div>
                                             </div>
 
                                             <div class="col-md-12">
                                                 <div>
                                                     <label class="form-label f-w-500"> Explainer </label>
-                                                    <textarea class="form-control" rows="5"
+                                                    <textarea id ="explainer" class="form-control" rows="5"
                                                         placeholder="Our Father In Heaven, Lets do UR Will"></textarea>
                                                 </div>
                                             </div>
 
                                             <div class = "text-start mt-2">
-                                                <button class="btn btn-primary btn-sm" type="submit">Add <span class = "text-white">++</span></button>
+                                                <button class="btn btn-primary btn-sm btn add">Add <span class = "text-white">++</span></button>
                                             </div>
                                           </div>  
                                         </div>
                                     </div>
                                     <div class="card-footer text-center">
-                                        <button class="btn btn-primary" type="submit">Submit Lords Prayer </button>
+                                        <button class="btn btn-primary" id="btn">Submit Lords Prayer </button>
                                     </div>
                                 </form>
                             </div> 
@@ -232,6 +234,10 @@
             </footer>
         </div>
     </div>
+    {{!--  --}}
+    <div class="token d-none">{{token}}</div>
+    <div class="type d-none">{{type}}</div>
+    <script src="../assets/js/custom/lords_prayer.js"></script>
     <!-- latest jquery-->
     <script src="../assets/js/jquery-3.6.0.min.js"></script>
     <!-- Bootstrap js-->

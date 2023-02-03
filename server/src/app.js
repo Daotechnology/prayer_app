@@ -42,7 +42,7 @@ app.use(morgan('tiny'));
 // //Configuring Routers
 const authRoutes = require('./../api/routes/authentication');
 const dashboardRoutes = require('./../api/routes/dashboard');
-// const paymentRoutes = require('./../api/routes/payment');
+const prayerRoutes = require('./../api/routes/prayer');
 
 
 app.get('/', (req, res) => {
@@ -51,6 +51,7 @@ app.get('/', (req, res) => {
 
 app.use(authRoutes);
 app.use(dashboardRoutes);
+app.use(prayerRoutes);
 // app.use('/dist/', profileRoutes);
 // app.use('/dist/', paymentRoutes);
 
