@@ -362,14 +362,14 @@ const client_get_all_morning_prayer = async(req,res)=>{
       );
     }
 
-    const prayer = await Morning_Prayer.findOne({type:params}).sort({createdAt:-1});
+    const opening_prayer = await Morning_Prayer.findOne({type:params}).sort({createdAt:-1});
     const confession = await Confession.findOne({type:params}).sort({createdAt:-1});
     const scripture = await Scripture.findOne({type:params}).sort({createdAt:-1});
     const lords_prayer = await LordsPrayer.findOne({type:params}).sort({createdAt:-1});
     const closing_prayer = await closingPrayer.findOne({type:params}).sort({createdAt:-1});
 
-    const data = [{
-      opening_prayer:prayer},
+    const data = [
+      opening_prayer,
       confession,
       scripture,
       lords_prayer,
