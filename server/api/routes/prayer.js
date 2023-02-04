@@ -4,7 +4,7 @@ const express = require('express');
 
 const { auth } = require('./../middleware/middleware');
 // Prayer Endpoint
-const { morning_prayer, client_get_all_morning_prayer, midday_opening_prayer, client_get_midday_opening_prayer, closing_prayer, client_get_closing_prayer, client_get_morning_prayer, confession,client_get_confession, scripture, client_get_scripture, lords_prayer, client_get_lords_prayer} = require('../controller/prayer');
+const {client_get_all_late_evening_prayer, morning_prayer,client_get_all_evening_prayer, client_get_all_midday_prayer, client_get_all_morning_prayer, midday_opening_prayer, client_get_midday_opening_prayer, closing_prayer, client_get_closing_prayer, client_get_morning_prayer, confession,client_get_confession, scripture, client_get_scripture, lords_prayer, client_get_lords_prayer} = require('../controller/prayer');
 
 const router = express.Router();
 
@@ -40,6 +40,14 @@ router.get('/api/v1/client/get/midday/opening/prayer/:type',client_get_midday_op
 
 // All Morming Prayer
 router.get('/api/v1/get/all/morning/prayer/:type', client_get_all_morning_prayer);
+
+router.get('/api/v1/get/all/midday/prayer/:type', client_get_all_midday_prayer);
+
+router.get('/api/v1/get/all/evening/prayer/:type', client_get_all_evening_prayer);
+
+router.get('/api/v1/get/all/late/evening/prayer/:type', client_get_all_late_evening_prayer);
+
+
 
 
 module.exports = router;
