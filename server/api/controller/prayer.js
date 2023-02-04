@@ -368,13 +368,13 @@ const client_get_all_morning_prayer = async(req,res)=>{
     const lords_prayer = await LordsPrayer.findOne({type:params}).sort({createdAt:-1});
     const closing_prayer = await closingPrayer.findOne({type:params}).sort({createdAt:-1});
 
-    const data = {
-      opening_prayer:prayer,
+    const data = [{
+      opening_prayer:prayer},
       confession,
       scripture,
       lords_prayer,
       closing_prayer
-    }
+    ]
 
     return res
       .json({ error: false, data, statusText: "Sucessfully Got All Morning Prayer"})
