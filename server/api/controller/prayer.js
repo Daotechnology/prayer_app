@@ -351,4 +351,37 @@ const client_get_midday_opening_prayer = async(req,res) => {
   }
 }
 
-module.exports = {client_get_midday_opening_prayer, midday_opening_prayer, morning_prayer, client_get_morning_prayer, confession, client_get_confession, scripture, client_get_scripture, lords_prayer, client_get_lords_prayer, closing_prayer, client_get_closing_prayer};
+const client_get_all_morning_prayer = async(req,res)=>{
+  try {
+    const collectibles = ["morning_prayer","midday_prayer","evening_prayer","evening_prayer"];
+    const params = req.params.type;
+
+    if (collectibles.includes(params) == false) {
+      throw new Error(
+        `${params} is not valid, below are the list of Accepted Params ${collectibles}`
+      );
+    }
+
+    const prayer = await Morning_Prayer.findOne({type:params}).sort({createdAt:-1});
+    const confession = await Confession.findOne({type:params}).sort({createdAt:-1});
+    const scripture = await Scripture.findOne({type:params}).sort({createdAt:-1});
+    const lords_prayer = await LordsPrayer.findOne({type:params}).sort({createdAt:-1});
+    const closing_prayer = await closingPrayer.findOne({type:params}).sort({createdAt:-1});
+
+    const data = {
+      opening_prayer:prayer,
+      confession,
+      scripture,
+      lords_prayer,
+      closing_prayer
+    }
+
+    return res
+      .json({ error: false, data, statusText: "Sucessfully Got All Morning Prayer"})
+      .status(200);
+  }catch(e){
+    return res.status(200).json({ error: true, errorMsg: e.message });
+  }
+}
+
+module.exports = {client_get_all_morning_prayer, client_get_midday_opening_prayer, midday_opening_prayer, morning_prayer, client_get_morning_prayer, confession, client_get_confession, scripture, client_get_scripture, lords_prayer, client_get_lords_prayer, closing_prayer, client_get_closing_prayer};
