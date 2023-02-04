@@ -123,17 +123,16 @@
                                                             <tr>
                                                                 <th> Title </th>
                                                                 <th> Prayer </th>
-                                                                <th> Scripture </th>
-                                                                <th> Verse </th>
+                                                                <th> Type </th>
                                                                 <th> Action </th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
+                                                            {{#each prayer}}
                                                             <tr>
-                                                                <td>Tiger Nixon</td>
-                                                                <td>System Architect</td>
-                                                                <td>Edinburgh</td>
-                                                                <td>61</td>
+                                                                <td>{{this.title}}</td>
+                                                                <td>{{this.prayers}}</td>
+                                                                <td>{{this.type}}</td>
                                                                 <td>
                                                                     <ul class="action">
                                                                         <li class="edit"> <a href="#"><i
@@ -144,100 +143,7 @@
                                                                     </ul>
                                                                 </td>
                                                             </tr>
-                                                            <tr>
-                                                                <td>Garrett Winters</td>
-                                                                <td>Accountant</td>
-                                                                <td>Tokyo</td>
-                                                                <td>63</td>
-                                                                <td>
-                                                                    <ul class="action">
-                                                                        <li class="edit"> <a href="#"><i
-                                                                                    class="icon-pencil-alt"></i></a>
-                                                                        </li>
-                                                                        <li class="delete"><a href="#"><i
-                                                                                    class="icon-trash"></i></a></li>
-                                                                    </ul>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Ashton Cox</td>
-                                                                <td>Junior Technical Author</td>
-                                                                <td>San Francisco</td>
-                                                                <td>66</td>
-                                                                <td>
-                                                                    <ul class="action">
-                                                                        <li class="edit"> <a href="#"><i
-                                                                                    class="icon-pencil-alt"></i></a>
-                                                                        </li>
-                                                                        <li class="delete"><a href="#"><i
-                                                                                    class="icon-trash"></i></a></li>
-                                                                    </ul>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Cedric Kelly</td>
-                                                                <td>Senior Javascript Developer</td>
-                                                                <td>Edinburgh</td>
-                                                                <td>$433,060</td>
-                                                                <td>
-                                                                    <ul class="action">
-                                                                        <li class="edit"> <a href="#"><i
-                                                                                    class="icon-pencil-alt"></i></a>
-                                                                        </li>
-                                                                        <li class="delete"><a href="#"><i
-                                                                                    class="icon-trash"></i></a></li>
-                                                                    </ul>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Airi Satou</td>
-                                                                <td>Accountant</td>
-                                                                <td>Tokyo</td>
-                                                                <td>33</td>
-                                                             
-                                                                <td>
-                                                                    <ul class="action">
-                                                                        <li class="edit"> <a href="#"><i
-                                                                                    class="icon-pencil-alt"></i></a>
-                                                                        </li>
-                                                                        <li class="delete"><a href="#"><i
-                                                                                    class="icon-trash"></i></a></li>
-                                                                    </ul>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Brielle Williamson</td>
-                                                                <td>Integration Specialist</td>
-                                                                <td>New York</td>
-                                                                <td>61</td>
-                                                               
-                                                                <td>
-                                                                    <ul class="action">
-                                                                        <li class="edit"> <a href="#"><i
-                                                                                    class="icon-pencil-alt"></i></a>
-                                                                        </li>
-                                                                        <li class="delete"><a href="#"><i
-                                                                                    class="icon-trash"></i></a></li>
-                                                                    </ul>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Herrod Chandler</td>
-                                                                <td>Sales Assistant</td>
-                                                                <td>San Francisco</td>
-                                                                <td>59</td>
-                                                            
-                                                                <td>
-                                                                    <ul class="action">
-                                                                        <li class="edit"> <a href="#"><i
-                                                                                    class="icon-pencil-alt"></i></a>
-                                                                        </li>
-                                                                        <li class="delete"><a href="#"><i
-                                                                                    class="icon-trash"></i></a></li>
-                                                                    </ul>
-                                                                </td>
-                                                            </tr>
-                                                           
+                                                            {{/each}}
                                                         </tbody>
                                                     </table>
                                                 </div>

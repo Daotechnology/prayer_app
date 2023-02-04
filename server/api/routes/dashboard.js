@@ -13,9 +13,9 @@ if (typeof localStorage === "undefined" || localStorage === null) {
   localStorage = new LocalStorage('./scratch');
 }
 
-// const Morning_Prayer = require('../model/morningPrayer');
-// const Confession = require('../model/Confession');
-// const Scripture = require('../model/Scripture');
+const Morning_Prayer = require('../model/morningPrayer');
+const Confession = require('../model/Confession');
+const Scripture = require('../model/Scripture');
 // const LordsPrayer = require('../model/LordsPrayer');
 // const closingPrayer = require('../model/closingPrayer');
 // const middayOpeningPrayer = require('../model/middayOpeningPrayer');
@@ -34,42 +34,49 @@ router.get('/dashboard',validate,(req,res)=>{
     }
 });
 
-router.get('/morning_prayer',validate, (req,res)=>{
+router.get('/morning_prayer',validate, async(req,res)=>{
     try {
         if (!req.token) {
             return res.redirect('/signin');
         }
+        const prayer = await Morning_Prayer.find({type:'morning_prayer'},'title prayers type _id').sort({createdAt:-1});
         return res.render('morning',{
             token:req.token,
-            type:'morning_prayer'
+            type:'morning_prayer',
+            prayer
         });
     } catch(e) {
         return res.redirect('/signin');
     }
 })
 
-router.get('/confession/:prayer',validate,(req,res)=>{
+router.get('/confession/:prayer',validate,async(req,res)=>{
     try {
         if (!req.token) {
             return res.render('signin');
         }
+        const prayer = await Confession.find({type:req.params.prayer}).sort({createdAt:-1});
+        console.log(prayer);
         return res.render('confession',{
             token:req.token,
-            type:req.params.prayer
+            type:req.params.prayer,
+            prayer
         });
     }catch(e){
         return res.render('404'); 
     }
 })
 
-router.get('/scripture',validate,(req,res)=>{
+router.get('/scripture',validate, async(req,res)=>{
     try {
         if (!req.token) {
             return res.redirect('/signin');
         }
+        const prayer = await Scripture.find({type:'morning_prayer'},'scripture type _id').sort({createdAt:-1});
         return res.render('scripture',{
             token:req.token,
-            type:'morning_prayer'
+            type:'morning_prayer',
+            prayer
         });
     }catch(e){
         return res.render('404'); 
