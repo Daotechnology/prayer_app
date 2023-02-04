@@ -16,7 +16,7 @@ if (typeof localStorage === "undefined" || localStorage === null) {
 const Morning_Prayer = require('../model/morningPrayer');
 const Confession = require('../model/Confession');
 const Scripture = require('../model/Scripture');
-// const LordsPrayer = require('../model/LordsPrayer');
+const LordsPrayer = require('../model/LordsPrayer');
 // const closingPrayer = require('../model/closingPrayer');
 // const middayOpeningPrayer = require('../model/middayOpeningPrayer');
 
@@ -97,14 +97,16 @@ router.get('/late_evening_scripture',validate,(req,res)=>{
     }
 })
 
-router.get('/lords_prayer/:prayer',validate,(req,res)=>{
+router.get('/lords_prayer/:prayer',validate,async(req,res)=>{
     try {
         if (!req.token) {
             return res.redirect('/signin');
         }
+        const prayer = await LordsPrayer.find({type:req.params.prayer},'lords_prayer type _id createdAt').sort({createdAt:-1});
         return res.render('lords_prayer', {
             token:req.token,
-            type:req.params.prayer
+            type:req.params.prayer,
+            prayer
         });
     }catch(e){
         return res.render('404'); 

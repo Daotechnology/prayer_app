@@ -106,18 +106,14 @@
                                                         <thead>
                                                             <tr>
                                                                 <th> Scripture</th>
-                                                                <th> Date </th>
                                                                 <th> Action </th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
                                                             {{#each prayer}}
-                                                            
+                                                            {{#each this.scripture}}
                                                             <tr>
-                                                                {{#each this.scripture}}
                                                                 <td>{{this.scripture_verse}}</td> 
-                                                                  {{/each}}  
-                                                                <td></td>                                                             
                                                                 <td>
                                                                     <ul class="action">
                                                                         <li class="edit"> <a href="#"><i
@@ -127,7 +123,8 @@
                                                                                     class="icon-trash"></i></a></li>
                                                                     </ul>
                                                                 </td>
-                                                            </tr>                                                          
+                                                            </tr>  
+                                                            {{/each}}                                                         
                                                            {{/each}}
                                                         </tbody>
                                                     </table>
