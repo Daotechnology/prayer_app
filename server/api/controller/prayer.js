@@ -368,13 +368,7 @@ const client_get_all_morning_prayer = async(req,res)=>{
     const lords_prayer = await LordsPrayer.findOne({type:params}).sort({createdAt:-1});
     const closing_prayer = await closingPrayer.findOne({type:params}).sort({createdAt:-1});
 
-    let data = [
-    ['opening_prayer', opening_prayer],
-    ['confession', confession],
-    ['scripture', scripture],
-    ['lords_prayer', lords_prayer],
-    ['closing_prayer', closing_prayer]
-];
+    let data = [ {opening_prayer:opening_prayer}, {confession}, {lords_prayer}, {closing_prayer}];
 
     // const data = [{
     //   opening_prayer
@@ -411,11 +405,7 @@ const client_get_all_midday_prayer = async(req,res)=>{
     const scripture = await Scripture.findOne({type:params}).sort({createdAt:-1});
     const closing_prayer = await closingPrayer.findOne({type:params}).sort({createdAt:-1});
 
-    const data = [{
-      opening_prayer,
-      scripture,
-      closing_prayer
-  }]
+    let data = [ {opening_prayer:opening_prayer}, {scripture}, {closing_prayer}];
 
     return res
       .json({ error: false, data, statusText: "Sucessfully Got All Midday Prayer"})
@@ -429,7 +419,6 @@ const client_get_all_evening_prayer = async(req,res)=>{
   try {
     const collectibles = ["evening_prayer"];
     const params = req.params.type;
-    let arr = [];
 
     if (collectibles.includes(params) == false) {
       throw new Error(
@@ -440,16 +429,11 @@ const client_get_all_evening_prayer = async(req,res)=>{
     const prayer = await Morning_Prayer.findOne({type:params}).sort({createdAt:-1});
     const scripture = await Scripture.findOne({type:params}).sort({createdAt:-1});
     const closing_prayer = await closingPrayer.findOne({type:params}).sort({createdAt:-1});
-
-    const data = {
-      scripture,
-      opening_prayer:prayer,
-      closing_prayer
-    }
-    arr.push(data);
+  
+    let data = [ {opening_prayer:prayer}, {scripture}, {closing_prayer}];
 
     return res
-      .json({ error: false, data:arr, statusText: "Sucessfully Got All Evening Prayer"})
+      .json({ error: false, data, statusText: "Sucessfully Got All Evening Prayer"})
       .status(200);
   }catch(e){
     return res.status(200).json({ error: true, errorMsg: e.message });
@@ -460,7 +444,6 @@ const client_get_all_late_evening_prayer = async(req,res)=>{
   try {
     const collectibles = ["late_evening_prayer"];
     const params = req.params.type;
-    let arr = [];
 
     if (collectibles.includes(params) == false) {
       throw new Error(
@@ -474,17 +457,11 @@ const client_get_all_late_evening_prayer = async(req,res)=>{
     const lords_prayer = await LordsPrayer.findOne({type:params}).sort({createdAt:-1});
     const closing_prayer = await closingPrayer.findOne({type:params}).sort({createdAt:-1});
 
-    const data = {
-      scripture,
-      opening_prayer:prayer,
-      closing_prayer,
-      lords_prayer,
-      confession
-    }
-    arr.push(data);
+      let data = [ {opening_prayer:prayer}, {confession}, {scripture}, {lords_prayer}, {closing_prayer}];
+ 
 
     return res
-      .json({ error: false, data:arr, statusText: "Sucessfully Got All Late Evening Prayer"})
+      .json({ error: false, data, statusText: "Sucessfully Got All Late Evening Prayer"})
       .status(200);
   }catch(e){
     return res.status(200).json({ error: true, errorMsg: e.message });
