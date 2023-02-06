@@ -302,7 +302,7 @@ const midday_opening_prayer  = async(req, res)=>{
     }
 
     //List of Accepted Fields
-    const collectibles = ["prayer","type"];
+    const collectibles = ["prayers","type"];
     const body = req.body;
     const keys = Object.keys(body);
 

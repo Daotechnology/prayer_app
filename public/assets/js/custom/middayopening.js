@@ -54,7 +54,7 @@ prayer_btn.addEventListener("click",async(e)=>{
     e.preventDefault();
     try {
         const data = {
-            prayer:arr,
+            prayers:arr,
             type:type.innerHTML,
         }
     
