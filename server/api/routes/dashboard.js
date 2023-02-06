@@ -17,8 +17,8 @@ const Morning_Prayer = require('../model/morningPrayer');
 const Confession = require('../model/Confession');
 const Scripture = require('../model/Scripture');
 const LordsPrayer = require('../model/LordsPrayer');
-// const closingPrayer = require('../model/closingPrayer');
-// const middayOpeningPrayer = require('../model/middayOpeningPrayer');
+const closingPrayer = require('../model/closingPrayer');
+const middayOpeningPrayer = require('../model/middayOpeningPrayer');
 
 
 router.get('/dashboard',validate,(req,res)=>{
@@ -39,7 +39,7 @@ router.get('/morning_prayer',validate, async(req,res)=>{
         if (!req.token) {
             return res.redirect('/signin');
         }
-        const prayer = await Morning_Prayer.find({type:'morning_prayer'},'title prayers type _id').sort({createdAt:-1});
+        const prayer = await Morning_Prayer.find({type:'morning_prayer'},'title prayers createdAt type _id').sort({createdAt:-1});
         return res.render('morning',{
             token:req.token,
             type:'morning_prayer',
@@ -72,7 +72,7 @@ router.get('/scripture',validate, async(req,res)=>{
         if (!req.token) {
             return res.redirect('/signin');
         }
-        const prayer = await Scripture.find({type:'morning_prayer'},'scripture type _id').sort({createdAt:-1});
+        const prayer = await Scripture.find({type:'morning_prayer'},'scripture createdAt type _id').sort({createdAt:-1});
         return res.render('scripture',{
             token:req.token,
             type:'morning_prayer',
@@ -83,14 +83,17 @@ router.get('/scripture',validate, async(req,res)=>{
     }
 })
 
-router.get('/late_evening_scripture',validate,(req,res)=>{
+router.get('/late_evening_scripture',validate,async(req,res)=>{
     try {
         if (!req.token) {
             return res.redirect('/signin');
         }
+        const prayer = await Scripture.find({type:'late_evening_prayer'},'scripture createdAt type _id').sort({createdAt:-1});
+
         return res.render('scripture',{
             token:req.token,
-            type:'late_evening_prayer'
+            type:'late_evening_prayer',
+            prayer
         });
     }catch(e){
         return res.render('404'); 
@@ -102,7 +105,7 @@ router.get('/lords_prayer/:prayer',validate,async(req,res)=>{
         if (!req.token) {
             return res.redirect('/signin');
         }
-        const prayer = await LordsPrayer.find({type:req.params.prayer},'lords_prayer type _id createdAt').sort({createdAt:-1});
+        const prayer = await LordsPrayer.find({type:req.params.prayer},'type _id createdAt').sort({createdAt:-1});
         return res.render('lords_prayer', {
             token:req.token,
             type:req.params.prayer,
@@ -113,29 +116,34 @@ router.get('/lords_prayer/:prayer',validate,async(req,res)=>{
     }
 })
 
-router.get('/closing_prayer/:prayer',validate,(req,res)=>{
+router.get('/closing_prayer/:prayer',validate,async(req,res)=>{
     try {
         if (!req.token) {
             return res.redirect('/signin');
         }
+        const prayer = await closingPrayer.find({type:req.params.prayer},'type _id title createdAt').sort({createdAt:-1});
+        console.log(prayer);
         return res.render('closing_prayer',{
             token:req.token,
-            type:req.params.prayer
+            type:req.params.prayer,
+            prayer
         });
     }catch (e) {
         return res.render('404'); 
     }
 })
 
-router.get('/midday_opening/:prayer',validate,(req,res)=>{
+router.get('/midday_opening/:prayer',validate, async(req,res)=>{
     try {
         if (!req.token) {
             return res.redirect('/signin');
         }
+        const prayer = await middayOpeningPrayer.find({type:req.params.prayer},'type _id title createdAt').sort({createdAt:-1});
 
         return res.render('midday_opening',{
             token:req.token,
-            type:req.params.prayer
+            type:req.params.prayer,
+            prayer
         });
 
     }catch (e) {
@@ -143,56 +151,66 @@ router.get('/midday_opening/:prayer',validate,(req,res)=>{
     }
 })
 
-router.get('/midday_scripture',validate,(req,res)=>{
+router.get('/midday_scripture',validate,async(req,res)=>{
     try {
         if (!req.token) {
             return res.redirect('/signin');
         }
+        const prayer = await Scripture.find({type:'midday_prayer'},'scripture createdAt type _id').sort({createdAt:-1});
         return res.render('scripture',{
             token:req.token,
-            type:'midday_prayer'
+            type:'midday_prayer',
+            prayer
         });
     }catch (e) {
         return res.render('404');
     }
 })
 
-router.get('/midday_closing',validate,(req,res)=>{
+router.get('/midday_closing',validate,async(req,res)=>{
     try {
         if (!req.token) {
             return res.redirect('/signin');
         }
+        const prayer = await closingPrayer.find({type:'midday_prayer'},'type _id title createdAt').sort({createdAt:-1});
+
         return res.render('closing_prayer',{
             token:req.token,
-            type:'midday_prayer'
+            type:'midday_prayer',
+            prayer
         });
     }catch (e) {
         return res.render('404');
     }
 })
 
-router.get('/evening_prayer',validate,(req,res)=>{
+router.get('/evening_prayer',validate, async(req,res)=>{
     try {
         if (!req.token) {
             return res.redirect('/signin');
         }
+        const prayer = await Morning_Prayer.find({type:'evening_prayer'},'title prayers createdAt type _id').sort({createdAt:-1});
+
         return res.render('morning',{
             token:req.token,
-            type:'evening_prayer'
+            type:'evening_prayer',
+            prayer
         });
     }catch (e) {
         return res.render('404');
     }
 })
 
-router.get('/evening_scripture',validate,(req,res)=>{
+router.get('/evening_scripture',validate,async(req,res)=>{
     try {
         if (!req.token) {
             return res.redirect('/signin');
         }
+        const prayer = await Scripture.find({type:'evening_prayer'},'scripture createdAt type _id').sort({createdAt:-1});
         return res.render('scripture',{
             token:req.token,
-            type:'evening_prayer'
+            type:'evening_prayer',
+            prayer
         });
     }catch(e){
         return res.render('404'); 

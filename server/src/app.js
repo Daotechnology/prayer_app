@@ -25,6 +25,17 @@ app.use(express.static(public_path));
 
 // Register Partials ########################## Change The Views //
 hbs.registerPartials(hbs_path);
+
+hbs.registerHelper('handle_date', function(date){ 
+  const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const months = ['January','February','March','April','May','June','July','August','September','October','November','December']
+  const monthIndex = date.getMonth();
+  const monthName = months[monthIndex]
+  const dayIndex = date.getDay()
+  const dayName = days[dayIndex];
+  return `${dayName}, ${monthName} ${date.getFullYear()}`;
+});
+
 app.set('views', viewPath);
 //Set View Engine Am Using HBS
 app.set('view engine', 'hbs');

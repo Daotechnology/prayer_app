@@ -105,26 +105,22 @@
                                                     <table class="display" id="basic-1">
                                                         <thead>
                                                             <tr>
-                                                                <th> Scripture</th>
+                                                                <th>Date Created</th>
                                                                 <th> Action </th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
                                                             {{#each prayer}}
-                                                            {{#each this.scripture}}
                                                             <tr>
-                                                                <td>{{this.scripture_verse}}</td> 
+                                                                 <td>{{handle_date this.createdAt}}</td>
                                                                 <td>
                                                                     <ul class="action">
-                                                                        <li class="edit"> <a href="#"><i
-                                                                                    class="icon-pencil-alt"></i></a>
-                                                                        </li>
+                                                                        
                                                                         <li class="delete"><a href="#"><i
                                                                                     class="icon-trash"></i></a></li>
                                                                     </ul>
                                                                 </td>
                                                             </tr>  
-                                                            {{/each}}                                                         
                                                            {{/each}}
                                                         </tbody>
                                                     </table>
