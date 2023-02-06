@@ -302,7 +302,7 @@ const midday_opening_prayer  = async(req, res)=>{
     }
 
     //List of Accepted Fields
-    const collectibles = ["prayers","type"];
+    const collectibles = ["prayers", "type"];
     const body = req.body;
     const keys = Object.keys(body);
 
@@ -406,7 +406,9 @@ const client_get_all_midday_prayer = async(req,res)=>{
     const lords_prayer = await LordsPrayer.findOne({type:params}).sort({createdAt:-1});
     const closing_prayer = await closingPrayer.findOne({type:params}).sort({createdAt:-1});
 
-    let data = [ {opening_prayer:opening_prayer}, {scripture}, {lords_prayer}, {closing_prayer}];
+    console.log(opening_prayer);
+
+    let data = [ {opening_prayer}, {scripture}, {lords_prayer}, {closing_prayer}];
 
     return res
       .json({ error: false, data, statusText: "Sucessfully Got All Midday Prayer"})

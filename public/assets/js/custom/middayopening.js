@@ -8,53 +8,53 @@ const type = document.querySelector(".type");
 
 let arr = [];
 
-add.addEventListener("click",(e)=>{
-    e.preventDefault();
-    let html = "";
-    let uuid = Math.floor(Math.random() * 100000045677654);
+// add.addEventListener("click",(e)=>{
+//     e.preventDefault();
+//     let html = "";
+//     let uuid = Math.floor(Math.random() * 100000045677654);
 
-    const data = {
-        id:uuid,
-        prayers:prayer.value,
-    }
-    arr.push(data);
-    console.log(arr);
+//     const data = {
+//         id:uuid,
+//         prayers:prayer.value,
+//     }
+//     arr.push(data);
+//     console.log(arr);
 
-    for (const value of arr) {
-        html +=` <button ty-pe="button" class="btn btn-primary mt-1 mb-1 text-start">
-        ${value.prayer.substr(0,7)} <span id = "${value.id}" class="badge bg-dark text-danger del"> X </span>`
-        dynamic.innerHTML = html;
-    }
-    dels();
-})
+//     for (const value of arr) {
+//         html +=` <button ty-pe="button" class="btn btn-primary mt-1 mb-1 text-start">
+//         ${value.prayers.substr(0,10)} <span id = "${value.id}" class="badge bg-dark text-danger del"> X </span>`
+//         dynamic.innerHTML = html;
+//     }
+//     dels();
+// })
 
 
-function dels() {
-    document.querySelectorAll(".del").forEach(del=>{
-        del.addEventListener("click",function(e){
-            const id = e.target.id;
-            console.log(id);
-            arr = arr.filter(val=>{
-                return val.id != id;
-            });   
-            let html = "";
-            for (const value of arr) {
-                html +=` <button type="button" class="btn btn-primary mt-1 mb-1 text-start">
-                ${value.prayer.substr(0,7)} <span id = "${value.id}" class="badge bg-dark text-danger del"> X </span>`
-                dynamic.innerHTML = html;
-            } 
-            dels();
-        })
-    })
+// function dels() {
+//     document.querySelectorAll(".del").forEach(del=>{
+//         del.addEventListener("click",function(e){
+//             const id = e.target.id;
+//             console.log(id);
+//             arr = arr.filter(val=>{
+//                 return val.id != id;
+//             });   
+//             let html = "";
+//             for (const value of arr) {
+//                 html +=` <button type="button" class="btn btn-primary mt-1 mb-1 text-start">
+//                 ${value.prayers.substr(0,10)} <span id = "${value.id}" class="badge bg-dark text-danger del"> X </span>`
+//                 dynamic.innerHTML = html;
+//             } 
+//             dels();
+//         })
+//     })
     
       
-}
+// }
 
 prayer_btn.addEventListener("click",async(e)=>{
     e.preventDefault();
     try {
         const data = {
-            prayers:arr,
+            prayers:prayer.value,
             type:type.innerHTML,
         }
     
