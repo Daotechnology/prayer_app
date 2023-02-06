@@ -368,7 +368,7 @@ const client_get_all_morning_prayer = async(req,res)=>{
     const lords_prayer = await LordsPrayer.findOne({type:params}).sort({createdAt:-1});
     const closing_prayer = await closingPrayer.findOne({type:params}).sort({createdAt:-1});
 
-    let data = [ {opening_prayer:opening_prayer}, {confession}, {lords_prayer}, {closing_prayer}, {scripture}];
+    let data = [ {opening_prayer:opening_prayer}, {confession},  {scripture}, {lords_prayer}, {closing_prayer}];
 
     // const data = [{
     //   opening_prayer
