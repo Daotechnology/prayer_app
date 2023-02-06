@@ -15,13 +15,13 @@ add.addEventListener("click",(e)=>{
 
     const data = {
         id:uuid,
-        prayer:prayer.value,
+        prayers:prayer.value,
     }
     arr.push(data);
     console.log(arr);
 
     for (const value of arr) {
-        html +=` <button type="button" class="btn btn-primary mt-1 mb-1 text-start">
+        html +=` <button ty-pe="button" class="btn btn-primary mt-1 mb-1 text-start">
         ${value.prayer.substr(0,7)} <span id = "${value.id}" class="badge bg-dark text-danger del"> X </span>`
         dynamic.innerHTML = html;
     }
