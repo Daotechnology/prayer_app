@@ -403,9 +403,10 @@ const client_get_all_midday_prayer = async(req,res)=>{
 
     const opening_prayer = await middayOpeningPrayer.findOne({type:params}).sort({createdAt:-1});
     const scripture = await Scripture.findOne({type:params}).sort({createdAt:-1});
+    const lords_prayer = await LordsPrayer.findOne({type:params}).sort({createdAt:-1});
     const closing_prayer = await closingPrayer.findOne({type:params}).sort({createdAt:-1});
 
-    let data = [ {opening_prayer:opening_prayer}, {scripture}, {closing_prayer}];
+    let data = [ {opening_prayer:opening_prayer}, {scripture}, {lords_prayer}, {closing_prayer}];
 
     return res
       .json({ error: false, data, statusText: "Sucessfully Got All Midday Prayer"})
@@ -428,9 +429,10 @@ const client_get_all_evening_prayer = async(req,res)=>{
 
     const prayer = await Morning_Prayer.findOne({type:params}).sort({createdAt:-1});
     const scripture = await Scripture.findOne({type:params}).sort({createdAt:-1});
+    const lords_prayer = await LordsPrayer.findOne({type:params}).sort({createdAt:-1});
     const closing_prayer = await closingPrayer.findOne({type:params}).sort({createdAt:-1});
   
-    let data = [ {opening_prayer:prayer}, {scripture}, {closing_prayer}];
+    let data = [ {opening_prayer:prayer},{scripture},{lords_prayer},{closing_prayer}];
 
     return res
       .json({ error: false, data, statusText: "Sucessfully Got All Evening Prayer"})
