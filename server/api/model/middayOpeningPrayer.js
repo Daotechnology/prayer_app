@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 
 const middayOpeningPrayerSchema = mongoose.Schema({
-    prayer:{
+    prayers:{
         type:Array,
         required:true
     },
